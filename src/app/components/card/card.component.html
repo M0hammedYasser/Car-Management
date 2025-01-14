@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <h5 class="mb-4" style="padding-top: 50px"></h5>
+
+
+  <div class="job-card" *ngFor="let item of cars">
+    <h2 class="job-title">{{ item.id }} </h2>
+    <p class="company-name">{{ item.carOwner }}</p>
+    <p class="job-location">{{ item.side }}</p>
+    <p class="job-location">{{ item.carNumber }}</p>
+    <p class="job-location">{{ item.carModel }}</p>
+    <p class="job-location">{{ item.carColor }}</p>
+    <p class="job-location"><img src="data:image/png;base64,{{item.qrcode}}"/></p>
+
+
+  </div>
+
+
+</div>

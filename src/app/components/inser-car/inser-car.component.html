@@ -1,0 +1,34 @@
+<div class="body" dir="rtl">
+  <div class="register-container">
+    <h2 class="text-center mb-4">أضافة سيارة</h2>
+    <form (ngSubmit)="insert()">
+      <div class="mb-3">
+        <label for="carOwner" class="form-label">اسم صاحب السيارة</label>
+        <input type="text" class="form-control" id="carOwner"  [(ngModel)]="car.carOwner"
+               name="carOwner" required>
+      </div>
+      <div class="mb-3">
+        <label for="side" class="form-label">الجهة او الكلية</label>
+        <input type="text" class="form-control" id="side"
+               [(ngModel)]="car.side" name="side" required>
+      </div>
+      <div class="mb-3">
+        <label for="carModel" class="form-label">موديل السيارة</label>
+        <input type="text" class="form-control" id="carModel"
+               [(ngModel)]="car.carModel" name="carModel" required>
+      </div>
+      <div class="mb-3">
+        <label for="carNumber" class="form-label">رقم السيارة</label>
+        <input type="text" class="form-control" id="carNumber"
+               [(ngModel)]="car.carNumber" name="carNumber" required>
+      </div>
+      <div class="mb-3">
+        <label for="carColor" class="form-label">لون السيارة</label>
+        <input type="text" class="form-control" id="carColor"
+               [(ngModel)]="car.carColor" name="carColor" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Register</button>
+    </form>
+
+  </div>
+</div>
