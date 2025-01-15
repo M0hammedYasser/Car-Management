@@ -1,18 +1,21 @@
-<div class="container mt-4">
-  <h5 class="mb-4" style="padding-top: 50px"></h5>
+<!--<div class="container mt-4" dir="rtl">-->
+<!--  <h5 class="mb-4" style="padding-top: 50px"></h5>-->
 
 
-  <div class="job-card" *ngFor="let item of cars">
-    <h2 class="job-title">{{ item.id }} </h2>
-    <p class="company-name">{{ item.carOwner }}</p>
-    <p class="job-location">{{ item.side }}</p>
-    <p class="job-location">{{ item.carNumber }}</p>
-    <p class="job-location">{{ item.carModel }}</p>
-    <p class="job-location">{{ item.carColor }}</p>
-    <p class="job-location"><img src="data:image/png;base64,{{item.qrcode}}"/></p>
+<!--  <div class="job-card" *ngFor="let item of cars">-->
+<!--    <h2 class="job-title">{{ item.carOwner }} </h2>-->
+<!--    <p class="job-location">{{ item.side }}</p>-->
+<!--    <p class="job-location">{{ item.carNumber }}</p>-->
+<!--    <p class="job-location">{{ item.carModel }}</p>-->
+<!--    <p class="job-location">{{ item.carColor }}</p>-->
+<!--    <p class="job-location"><img src="data:image/png;base64,{{item.qrcode}}"/></p>-->
 
-
-  </div>
-
-
+<!--  </div>-->
+<!--</div>-->
+<div class="container">
+  <img src="assets/card.jpeg" alt="Snow" style="width:100%;border: rgba(207, 207, 207, 0.49) solid 3px;">
+  <div class="bottom-left"><img src="data:image/png;base64,{{cars[0].qrcode}}"/></div>
+  <div class="top-right"><img style="width: 200px ; height: 200px" src="assets/derhab.jpg"></div>
+  <div class="bottom-right">  {{cars[0].carOwner}} <h4 style="color: #7e3d3d;margin-top: 10px">2024-2025</h4></div>
+  <div class="centered">{{ cars[0].side }}</div>
 </div>

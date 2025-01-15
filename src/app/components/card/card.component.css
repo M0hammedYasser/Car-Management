@@ -1,38 +1,79 @@
-.job-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 16px;
-  transition: box-shadow 0.3s ease;
-}
-.job-card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.job-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #0055D8;;
-}
-.company-name {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 2px;
-}
-.job-location {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 7px;
+/*.job-card {*/
+/*  border: 1px solid #ddd;*/
+/*  border-radius: 8px;*/
+/*  padding: 10px;*/
+/*  margin-bottom: 16px;*/
+/*  transition: box-shadow 0.3s ease;*/
+/*}*/
+/*.job-card:hover {*/
+/*  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+/*}*/
+/*.job-title {*/
+/*  font-size: 1.2rem;*/
+/*  font-weight: bold;*/
+/*  color: #0055D8;;*/
+/*}*/
+/*.company-name {*/
+/*  font-size: 1rem;*/
+/*  color: #555;*/
+/*  margin-bottom: 2px;*/
+/*}*/
+/*.job-location {*/
+/*  font-size: 0.9rem;*/
+/*  color: #777;*/
+/*  margin-bottom: 7px;*/
 
+/*}*/
+/*.job-date{*/
+/*  font-size: 0.8rem;*/
+/*  color: #2c9266;*/
+/*  margin-bottom: 7px;*/
+/*  font-style: italic;*/
+/*}*/
+/*.apply-btn {*/
+/*  margin-top: 8px;*/
+/*}*/
+/*.activate{*/
+/*  color: #ff0000;*/
+/*}*/
+
+.container {
+  position: relative;
+  text-align: center;
+  color: #000000;
 }
-.job-date{
-  font-size: 0.8rem;
-  color: #2c9266;
-  margin-bottom: 7px;
-  font-style: italic;
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
 }
-.apply-btn {
-  margin-top: 8px;
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
 }
-.activate{
-  color: #ff0000;
+
+.top-right {
+  position: absolute;
+  top: 60px;
+  right: 26px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 100px;
+  right: 280px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.centered {
+  position: absolute;
+  top: 360px;
+  left: 50%;
+  font-size: 40px;
+  color: white;
+  transform: translate(-50%, -50%);
 }
