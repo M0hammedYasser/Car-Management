@@ -2,6 +2,9 @@
   position: relative;
   text-align: center;
   color: #000000;
+  zoom: .7;
+  margin-top: 130px;;
+
 }
 
 .bottom-left {
@@ -11,5 +14,28 @@
 }
 
 
+.bottom-right {
+  position: absolute;
+  bottom: 200px;
+  right: 16px;
 
+}
 
+.print-button button {
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.print-button button img {
+  margin-right: 8px;
+}
+
+.print-button button:hover {
+  background-color: #0056b3;
+}

@@ -1,5 +1,32 @@
-<div class="container">
-  <img src="assets/تصريح%20copy%20(1).jpg" alt="Snow" style="width:100%;border: rgba(207, 207, 207, 0.49) solid 3px;">
-  <div class="bottom-right"><img style="width: 350px;height: 350px" src="data:image/png;base64,{{cars[0].qrcode}}"/></div>
+<div class="head">
+  <app-search  (searchTextChange)=onSearchTextEntered($event)></app-search>
+  <button class="btn bg-body-tertiary" (click)="change()" *ngIf="num ==1"> الكل </button>
+  <button class="btn bg-body-tertiary" (click)="change()" *ngIf="num ==0"> اليوم </button>
+</div>
+<div class="container-xxl">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered" dir="rtl">
+        <thead>
+        <tr>
+          <th>القيد</th>
+          <th>تاريخ الدخول</th>
+          <th>اسم صاحب المركبة</th>
+          <th>الجهة</th>
+          <th>رقم المركبة</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let report of reports | search : searchText ;  index as i ">
+          <td>{{ i +1}}</td>
+          <td>{{ report.date }}</td>
+          <td>{{ report.car.carOwner }}</td>
+          <td>{{ report.car.side }}</td>
+          <td>{{ report.car.carNumber }}</td>
 
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

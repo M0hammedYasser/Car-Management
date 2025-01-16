@@ -1,11 +1,11 @@
 .navbar {
   background-color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /*position: fixed;*/
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1030;
-  /*padding: 0;*/
+
 
 
 }
@@ -14,6 +14,7 @@
   font-weight: bold;
   font-size: 1.5rem;
   color: #0055D8;;
+
 }
 
 .nav-link {

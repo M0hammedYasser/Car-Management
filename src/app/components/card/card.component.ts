@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {NgForOf, NgIf} from "@angular/common";
 import {Car} from "../../model/car";
 import {CarService} from "../../service/car.service";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-card',
@@ -26,4 +27,5 @@ export class CardComponent implements OnInit {
   }
 
 
+  protected readonly environment = environment;
 }

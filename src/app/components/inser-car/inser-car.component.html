@@ -1,34 +1,54 @@
 <div class="body" dir="rtl">
   <div class="register-container">
-    <h2 class="text-center mb-4">أضافة سيارة</h2>
+    <h4 class="text-center mb-4">إضافة مركبة</h4>
     <form (ngSubmit)="insert()">
       <div class="mb-3">
-        <label for="carOwner" class="form-label">اسم صاحب السيارة</label>
-        <input type="text" class="form-control" id="carOwner"  [(ngModel)]="car.carOwner"
-               name="carOwner" required>
+        <label for="carOwner" class="form-label">اسم صاحب مركبة</label>
+        <input type="text" class="form-control" id="carOwner" [(ngModel)]="car.carOwner" name="carOwner" required>
       </div>
       <div class="mb-3">
         <label for="side" class="form-label">الجهة او الكلية</label>
-        <input type="text" class="form-control" id="side"
-               [(ngModel)]="car.side" name="side" required>
+        <input type="text" class="form-control" id="side" [(ngModel)]="car.side" name="side" required>
       </div>
-      <div class="mb-3">
-        <label for="carModel" class="form-label">موديل السيارة</label>
-        <input type="text" class="form-control" id="carModel"
-               [(ngModel)]="car.carModel" name="carModel" required>
-      </div>
-      <div class="mb-3">
-        <label for="carNumber" class="form-label">رقم السيارة</label>
-        <input type="text" class="form-control" id="carNumber"
-               [(ngModel)]="car.carNumber" name="carNumber" required>
-      </div>
-      <div class="mb-3">
-        <label for="carColor" class="form-label">لون السيارة</label>
-        <input type="text" class="form-control" id="carColor"
-               [(ngModel)]="car.carColor" name="carColor" required>
-      </div>
-      <button type="submit" class="btn btn-primary w-100">Register</button>
-    </form>
 
+      <div class="row mb-3">
+        <div class="col-6">
+          <label for="carNumber" class="form-label">رقم مركبة</label>
+          <input type="text" class="form-control" id="carNumber" [(ngModel)]="car.carNumber" name="carNumber" required>
+        </div>
+        <div class="col-6">
+          <label for="carKind" class="form-label">نوع المركبة</label>
+          <select class="form-control" id="carKind" [(ngModel)]="car.carKind" name="carKind" required>
+            <option value="Car">سيارة</option>
+            <option value="Motorcycle">دراجة نارية</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-6">
+          <label for="carModel" class="form-label">موديل مركبة</label>
+          <input type="text" class="form-control" id="carModel" [(ngModel)]="car.carModel" name="carModel" required>
+        </div>
+        <div class="col-6">
+          <label for="carColor" class="form-label">لون مركبة</label>
+          <input type="text" class="form-control" id="carColor" [(ngModel)]="car.carColor" name="carColor" required>
+        </div>
+      </div>
+
+
+      <div class="row mb-3">
+        <div class="col-6">
+          <label for="licensePhoto" class="form-label">رخصة مركبة</label>
+          <input type="file" class="form-control" id="licensePhoto" [(ngModel)]="car.image.imagePath" name="licensePhoto" accept="image/*">
+        </div>
+        <div class="col-6">
+          <label for="personalPhoto" class="form-label">صورة شخصية</label>
+          <input type="file" class="form-control" id="personalPhoto" [(ngModel)]="car.licenseImg" name="personalPhoto" accept="image/*">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-25 mx-auto d-block mt-4">حفظ</button>
+    </form>
   </div>
 </div>

@@ -1,12 +1,11 @@
-.container {
-  position: relative;
-  text-align: center;
-  color: #000000;
+.btn{
+  margin: -66px 0px 0px 1100px;
+}
+.head{
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Adjust this value if needed */
+  background-color: white; /* Optional: to prevent overlapping content visibility */
+  margin-top: 100px;
 }
 
-.bottom-right {
-  position: absolute;
-  bottom: 200px;
-  right: 16px;
-
-}

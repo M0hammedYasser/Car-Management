@@ -41,6 +41,9 @@
   position: relative;
   text-align: center;
   color: #000000;
+  zoom: .6;
+  margin-top: 130px;
+
 }
 
 .bottom-left {

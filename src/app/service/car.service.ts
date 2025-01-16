@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Car} from "../model/car";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,11 @@ export class CarService {
   }
 
   findAll() {
-    return this.http.get<Car[]>(`http://localhost:8081/cars`);
+    return this.http.get<Car[]>(`${environment.url}/cars`);
   }
 
   insert(car: Car) {
-    return this.http.post<Car>(`http://localhost:8081/cars`, car);
+    return this.http.post<Car>(`${environment.url}/cars`, car);
   }
 
 }
