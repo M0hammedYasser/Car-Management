@@ -1,18 +1,14 @@
-<div class="container" style="margin-bottom: 50px">
-  <img src="assets/تصريح.jpg" #imageToPrint alt="Snow" style="width:100%;border: rgba(207, 207, 207, 0.49) solid 3px;">
-  <div class="bottom-left"><img style="width: 350px;height: 350px" src="data:image/png;base64,{{cars[0].qrcode}}"/>
-  </div>
-  <div class="print-button">
-    <button (click)="printImage(imageToPrint)">
-      <img src="assets/تصريح.jpg" alt="Print Icon" style="width: 20px; vertical-align: middle;">
-      Print Image
-    </button>
-  </div>
-</div>
 
-<div class="container">
-  <img src="assets/تصريح%20copy%20(1).jpg" alt="Snow" style="width:100%;border: rgba(207, 207, 207, 0.49) solid 3px;">
-  <div class="bottom-right"><img style="width: 350px;height: 350px" src="data:image/png;base64,{{cars[0].qrcode}}"/>
+
+<div class="container" style="margin-bottom: 50px" *ngFor="let car of cars" #card>
+  <img src="assets/تصريح.jpg" alt="Snow" style="width:100%;border: rgba(207, 207, 207, 0.49) solid 3px;">
+  <div class="bottom-left">
+    <img style="width: 350px;height: 350px" src="data:image/png;base64,{{car.qrcode}}"/>
+  </div>
+  <div class="print-button" style="text-align: center; margin-top: 10px;">
+    <button class="print-btn" (click)="printImage(card)">
+       {{ car.carOwner }}
+    </button>
   </div>
 </div>
 

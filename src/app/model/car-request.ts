@@ -1,6 +1,6 @@
 import {Image} from "./image";
 
-export interface Car {
+export interface CarRequest {
 
   id: number;
   carNumber: string;
@@ -11,10 +11,6 @@ export interface Car {
   side: string;
   licenseImg: string;
   qrcode: string;
-  licenseImage: Image;
-  personalImage: Image;
-
-
-
-
+  licenseImage?: File;
+  personalImage?: File;
 }

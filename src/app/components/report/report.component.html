@@ -13,6 +13,7 @@
           <th>تاريخ الدخول</th>
           <th>اسم صاحب المركبة</th>
           <th>الجهة</th>
+          <th>نوع المركبة</th>
           <th>رقم المركبة</th>
         </tr>
         </thead>
@@ -22,8 +23,8 @@
           <td>{{ report.date }}</td>
           <td>{{ report.car.carOwner }}</td>
           <td>{{ report.car.side }}</td>
+          <td>{{ report.car.carKind }}</td>
           <td>{{ report.car.carNumber }}</td>
-
         </tr>
         </tbody>
       </table>
