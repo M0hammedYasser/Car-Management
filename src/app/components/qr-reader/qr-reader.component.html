@@ -1,1 +1,6 @@
-<p>qr-reader works!</p>
+<div class="container">
+  <zxing-scanner
+    (scanSuccess)="onCodeScanned($event)"
+  >
+  </zxing-scanner>
+</div>

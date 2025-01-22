@@ -3,7 +3,7 @@
   text-align: center;
   color: #000000;
   zoom: .6;
-  margin-top: 130px;
+  padding-top: 130px;
 
 }
 
@@ -21,7 +21,7 @@
 
 .top-right {
   position: absolute;
-  top: 60px;
+  top: 150px;
   right: 26px;
 }
 

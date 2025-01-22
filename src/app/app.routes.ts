@@ -9,12 +9,15 @@ import {CarCardComponent} from "./components/car-card/car-card.component";
 
 export const routes: Routes = [
 
+  {path: '', component: ReportComponent},
+  {path: 'reports', component: ReportComponent},
+
   {path: 'cars', component: CardComponent},
   {path: 'add', component: InserCarComponent},
   {path: 'update/:id', component: UpdateComponent},
-  {path: '', component: ReportComponent},
-  {path: 'reports', component: ReportComponent},
+
   {path: 'moto/:id', component: MotoCardComponent},
   {path: 'car/:id', component: CarCardComponent},
+
   {path: 'qr-reader', component: QrReaderComponent}
 ];
