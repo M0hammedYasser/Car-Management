@@ -1,0 +1,64 @@
+.container {
+  position: relative;
+  text-align: center;
+  color: #000000;
+  zoom: .6;
+  margin-top: 130px;
+
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 60px;
+  right: 26px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 100px;
+  right: 280px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.centered {
+  position: absolute;
+  top: 360px;
+  left: 50%;
+  font-size: 40px;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+@media print {
+  .print-btn {
+    display: none !important;
+  }
+}
+
+/* Style the button in the UI */
+.print-btn {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.print-btn:hover {
+  background-color: #0056b3;
+}

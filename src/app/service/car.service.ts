@@ -16,6 +16,15 @@ export class CarService {
     return this.http.get<Car[]>(`${environment.url}/cars`);
   }
 
+
+  findByID(id: number) {
+    return this.http.get<Car>(`${environment.url}/cars/${id}`);
+  }
+
+  findById(id: number) {
+    return this.http.get<CarRequest>(`${environment.url}/cars/${id}`);
+  }
+
   findCars() {
     return this.http.get<Car[]>(`${environment.url}/cars/kind?carKind=Car`);
   }
@@ -42,4 +51,7 @@ export class CarService {
   }
 
 
+  update(car: CarRequest, id: number) {
+    return this.http.put<CarRequest>(`${environment.url}/cars?id=${id}`, car);
+  }
 }
