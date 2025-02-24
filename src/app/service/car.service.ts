@@ -54,4 +54,8 @@ export class CarService {
   update(car: CarRequest, id: number) {
     return this.http.put<CarRequest>(`${environment.url}/cars?id=${id}`, car);
   }
+
+  deleteById(id:number){
+    return this.http.delete<Car>(`${environment.url}/cars?id=${id}`);
+  }
 }

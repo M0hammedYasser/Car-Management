@@ -1,0 +1,30 @@
+<div class="body" dir="rtl">
+  <div class="register-container">
+    <h2 class="text-center mb-4">  مستخدم جديد</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="name" class="form-label">الأسم </label>
+        <input type="text" class="form-control" id="name"  [(ngModel)]="user.name"
+               name="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="username" class="form-label">اسم المسخدم</label>
+        <input type="email" class="form-control" id="username"
+               [(ngModel)]="user.username" name="username" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">كلمة السر</label>
+        <input type="password" class="form-control" id="password"
+               [(ngModel)]="user.password" name="password" required>
+      </div>
+      <div class="mb-3">
+        <label for="authority.id" class="form-label">الصلاحية</label>
+        <select class="form-select" aria-label="Default select example" name="authority.id" id="authority.id" [(ngModel)]="user.authority.id">
+          <option value="{{auth.id}}" *ngFor="let auth of authority">{{auth.name}}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">حفظ</button>
+    </form>
+
+  </div>
+</div>

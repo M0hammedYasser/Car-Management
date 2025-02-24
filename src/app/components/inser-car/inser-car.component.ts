@@ -17,7 +17,7 @@ import {CarRequest} from "../../model/car-request";
 })
 export class InserCarComponent {
 
-  car: CarRequest = {} as CarRequest;
+  car: CarRequest = {category : "1"} as CarRequest;
 
   constructor(private service: CarService, private router: Router) {}
 

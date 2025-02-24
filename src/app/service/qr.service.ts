@@ -14,4 +14,8 @@ export class QRService {
   insert(data : any) {
     return this.http.post<CarRequest>(`${environment.url}/report`, data);
   }
+
+  scan(value : string){
+    return this.http.post(`${environment.url}/report/scan`, value);
+  }
 }

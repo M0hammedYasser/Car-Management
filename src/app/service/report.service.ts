@@ -15,8 +15,16 @@ export class ReportService {
     return this.http.get<Report[]>(`${environment.url}/report`);
   }
 
+  findLastFourReport() {
+    return this.http.get<Report[]>(`${environment.url}/report/last`);
+  }
+
   findTodayReports(){
     return this.http.get<Report[]>(`${environment.url}/report/today`);
+  }
+
+  findBetweenDate(start: Date, end: Date) {
+    return this.http.get<Report[]>(`${environment.url}/report/between?start=${start}&end=${end}`);
   }
 
   insert(report: Report) {

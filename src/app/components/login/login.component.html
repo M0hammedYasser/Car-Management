@@ -1,0 +1,20 @@
+<div class="body">
+<!--    <img src="assets/Zagazig%20university.logo.png" style="height:90px;width: 90px ; margin-bottom: 500px ; " alt="Zagazig">-->
+  <div class="login-container">
+    <h2 class="text-center mb-4">تسجيل الدخول</h2>
+    <form (submit)="login()" dir="rtl">
+      <div class="mb-4">
+        <label for="username" class="form-label">اسم المستخدم</label>
+        <input type="text" class="form-control" id="username"  name="username" [(ngModel)]="auth.username" required>
+      </div>
+      <div class="mb-4">
+        <label for="password" class="form-label">كلمة المرور</label>
+        <input type="password" class="form-control" id="password"  name="password" [(ngModel)]="auth.password" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100 mt-4">دخول</button>
+    </form>
+    <div class="text-center mt-4">
+
+    </div>
+  </div>
+</div>

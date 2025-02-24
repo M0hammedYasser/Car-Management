@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BrowserMultiFormatReader} from '@zxing/browser';
 import {BrowserCodeReader} from '@zxing/browser';
@@ -15,18 +15,36 @@ import {QRService} from "../../service/qr.service";
   templateUrl: './qr-reader.component.html',
   styleUrl: './qr-reader.component.css'
 })
-export class QrReaderComponent {
+export class QrReaderComponent implements AfterViewInit {
 
-  constructor(private http: HttpClient , private service : QRService) {}
+  @ViewChild('qrInput', {static: false}) qrInput!: ElementRef<HTMLInputElement>;
+  private debounceTimer: any;
 
-  onCodeScanned(data: string): void {
-    if (data) {
-      // console.log('Scanned Data:', data);
-    }
+  constructor(private qrService:QRService) {
   }
 
+  ngAfterViewInit(): void {
+    this.focusInput();
+  }
 
+  onInput(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    if (this.debounceTimer) {
+      clearTimeout(this.debounceTimer);
+    }
+    this.debounceTimer = setTimeout(() => {
+      const scannedValue = inputElement.value.trim();
+      if (scannedValue) {
+        this.qrService.scan(scannedValue).subscribe();
+        inputElement.value = '';
+        this.focusInput();
+      }
+    }, 300);
+  }
 
-
-
+  private focusInput(): void {
+    if (this.qrInput) {
+      this.qrInput.nativeElement.focus();
+    }
+  }
 }

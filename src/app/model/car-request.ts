@@ -9,6 +9,7 @@ export interface CarRequest {
   carOwner: string;
   carKind : string;
   side: string;
+  category: string;
   licenseImg: string;
   qrcode: string;
   licenseImage?: File;

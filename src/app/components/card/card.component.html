@@ -1,33 +1,34 @@
 <div class="head">
-  <app-search (searchTextChange)=onSearchTextEntered($event)></app-search>
+  <app-search (searchTextChange)="onSearchTextEntered($event)"></app-search>
   <button class="btn btn-primary" routerLink="/add"> اضافة</button>
 </div>
 <div class="container-xxl">
   <div class="row">
     <div class="col-12">
-      <table class="table table-bordered" dir="rtl">
-        <thead>
-        <tr>
-          <th>القيد</th>
-          <th>اسم صاحب المركبة</th>
-          <th>الجهة</th>
-          <th>رقم المركبة</th>
-          <th>موديل المركبة</th>
-          <th>نوع المركبة</th>
-          <th>صورة الرخصة</th>
-          <th>الصزرة الشخصية</th>
-          <th>ألاجراءات</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let car of cars | search : searchText ;  index as i ">
-          <td>{{ car.id }}</td>
-          <td>{{ car.carOwner }}</td>
-          <td>{{ car.side }}</td>
-          <td>{{ car.carNumber }}</td>
-          <td>{{ car.carModel }}</td>
-          <td>{{ car.carKind == "Car" ? "سيارة" : "موتوسكل" }}</td>
-          <td style="text-align: center; vertical-align: middle; ">
+      <div class="table-responsive"> <!-- Added this div for better scrolling behavior -->
+        <table class="table table-bordered" dir="rtl">
+          <thead class="sticky-header"> <!-- Added sticky-header class -->
+          <tr>
+            <th>القيد</th>
+            <th>اسم صاحب المركبة</th>
+            <th>الجهة</th>
+            <th>رقم المركبة</th>
+            <th>موديل المركبة</th>
+            <th>نوع المركبة</th>
+            <th>صورة الرخصة</th>
+            <th>الصورة الشخصية</th>
+            <th>الإجراءات</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let car of cars | search: searchText;">
+            <td>{{ car.id }}</td>
+            <td>{{ car.carOwner }}</td>
+            <td>{{ car.side }}</td>
+            <td>{{ car.carNumber }}</td>
+            <td>{{ car.carModel }}</td>
+            <td>{{ car.carKind == 'Car' ? 'سيارة' : 'موتوسكل' }}</td>
+            <td style="text-align: center; vertical-align: middle; ">
             <img style="width: 30px;height: 20px" src="{{environment.url}}/images/{{car.licenseImage.imagePath}}"
                    (click)="openLicenseImage(car.licenseImage.imagePath)"></td>
           <td style="text-align: center; vertical-align: middle; ">
@@ -51,7 +52,7 @@
               </svg>
             </a>
 
-            <a (click)="deleteById(car.id)">
+            <a  (click)="deleteById(car.id)">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-trash"
                    viewBox="0 0 16 16">
                 <path
@@ -68,6 +69,4 @@
     </div>
   </div>
 </div>
-
-
-
+</div>

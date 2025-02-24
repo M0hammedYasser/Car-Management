@@ -1,6 +1,4 @@
-<div class="container">
-  <zxing-scanner
-    (scanSuccess)="onCodeScanned($event)"
-  >
-  </zxing-scanner>
+<div class="container d-flex align-items-center justify-content-center vh-70">
+  <input id="qrInput" type="text" class="form-control"
+         placeholder="Scan QR Code here" (input)="onInput($event)" autofocus/>
 </div>

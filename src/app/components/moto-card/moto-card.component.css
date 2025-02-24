@@ -9,8 +9,8 @@
 
 .bottom-left {
   position: absolute;
-  bottom: 8px;
-  left: 16px;
+  bottom: 100px;
+  left: 102px;
 }
 
 .top-left {
@@ -21,8 +21,17 @@
 
 .top-right {
   position: absolute;
-  top: 150px;
-  right: 26px;
+  top: 340px;
+  right: 64px;
+}
+
+.name{
+  position: absolute;
+  top: 280px;
+  right: 90px;
+  margin: 120px 330px;
+  color: #26267c;
+  font-family: "Yu Gothic UI", serif ;
 }
 
 .bottom-right {

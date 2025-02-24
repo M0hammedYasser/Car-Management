@@ -1,23 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light" *ngIf="isAuth" dir="rtl">
   <div class="container">
-    <a class="navbar-brand" routerLink="/reports">Car Management</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand">إدارة السيارات</a>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="activate" routerLink="/cars">CARS</a>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngIf="authority == 'ROLE_ADMIN'">
+          <a class="nav-link" routerLinkActive="activate" routerLink="/cars">المركبات</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="activate" routerLink="/reports">Report</a>
+        <li class="nav-item" *ngIf="authority == 'ROLE_ADMIN' || authority == 'ROLE_MANAGER'">
+          <a class="nav-link" routerLinkActive="activate" routerLink="/reports">تقارير الدخول</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="authority == 'ROLE_ADMIN'">
+          <a class="nav-link" routerLinkActive="activate" routerLink="/users">المستخدمين</a>
+        </li>
+        <li class="nav-item" *ngIf="authority == 'ROLE_USER'">
           <a class="nav-link" routerLinkActive="activate" routerLink="/qr-reader">QR</a>
         </li>
       </ul>
-
+      <button class="btn btn-primary" (click)="logOut()"> خروج</button>
     </div>
   </div>
 </nav>
+

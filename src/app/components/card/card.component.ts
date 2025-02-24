@@ -28,7 +28,7 @@ export class CardComponent implements OnInit {
   searchText: string = '';
   protected readonly environment = environment;
 
-  constructor(private service: CarService , private router: Router) {
+  constructor(private service: CarService, private router: Router) {
   }
 
   onSearchTextEntered(searchValue: any) {
@@ -43,20 +43,17 @@ export class CardComponent implements OnInit {
     this.service.findAll().subscribe(res => this.cars = res);
   }
 
-  deleteById(id : number) {
-
+  deleteById(id: number) {
+    this.service.deleteById(id).subscribe();
+    this.findAll();
   }
 
-  go(carKind: string , id : number) {
-
-    if(carKind == "Car")
+  go(carKind: string, id: number) {
+    if (carKind == "Car")
       this.router.navigateByUrl(`/car/${id}`)
     else if (carKind == "Motorcycle")
       this.router.navigateByUrl(`/moto/${id}`)
-
   }
-
-
 
 
   openLicenseImage(imagePath: any) {
